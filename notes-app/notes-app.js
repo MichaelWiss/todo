@@ -11,12 +11,16 @@ const notes = [{
 // const el = document.querySelector('p');
 // el.remove();
 
-const ps = document.querySelectorAll('p')
+// const ps = document.querySelectorAll('p')
 
-ps.forEach(function (p) {
-   p.textContent = '*******'
+// ps.forEach(function (p) {
+//    p.textContent = '*******'
+// })
+
+// const newParagraph = document.createElement('p')
+// newParagraph.textContent = 'This is a new element from Javascript'
+// document.querySelector('body').appendChild(newParagraph)
+
+document.querySelector('button').addEventListener('click', function(e) {
+	e.target.textContent = 'The button was clicked'
 })
-
-const newParagraph = document.createElement('p')
-newParagraph.textContent = 'This is a new element from Javascript'
-document.querySelector('body').appendChild(newParagraph)

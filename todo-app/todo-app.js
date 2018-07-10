@@ -31,3 +31,7 @@ todos.forEach(function (todo) {
 
 // You have 2 todos left (p element)
 // Add a p for each todo above (use text value)
+
+document.querySelector('button').addEventListener('click', function(e) {
+    e.target.textContent = 'The button was clicked'
+})

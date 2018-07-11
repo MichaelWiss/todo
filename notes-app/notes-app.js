@@ -21,6 +21,17 @@ const notes = [{
 // newParagraph.textContent = 'This is a new element from Javascript'
 // document.querySelector('body').appendChild(newParagraph)
 
+const filters = {
+	searchText: ''
+}
+
+const renderNotes = function (notes, filters) {
+	const filterNotes = notes.filter(function (note) {
+		return note.title.toLowerCase().includes(filters.searchText.toLowerCase())
+	})
+	console.log(filterdnotes)
+}
+
 document.querySelector('#create-note').addEventListener('click', function(e) {
 	e.target.textContent = 'The button was clicked'
 })

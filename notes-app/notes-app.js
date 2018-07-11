@@ -26,11 +26,13 @@ const filters = {
 }
 
 const renderNotes = function (notes, filters) {
-	const filterNotes = notes.filter(function (note) {
+	const filterdNotes = notes.filter(function (note) {
 		return note.title.toLowerCase().includes(filters.searchText.toLowerCase())
 	})
-	console.log(filterdnotes)
+	console.log(filterdNotes)
 }
+
+renderNotes(notes, filters)
 
 document.querySelector('#create-note').addEventListener('click', function(e) {
 	e.target.textContent = 'The button was clicked'
@@ -43,5 +45,6 @@ document.querySelector('#remove-all').addEventListener('click', function () {
 })
 
 document.querySelector('#search-text').addEventListener('input', function(e) {
-   console.log(e.target.value)
+   filters.searchText = e.target.value
+   renderNotes(notes, filters)
 })

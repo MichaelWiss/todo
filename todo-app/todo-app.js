@@ -46,17 +46,25 @@ renderTodos(todos, filters)
 // You have 2 todos left (p element)
 // Add a p for each todo above (use text value)
 
-document.querySelector('#create-todo').addEventListener('click', function(e) {
-    console.log('add a new todo')
-})
+// document.querySelector('#create-todo').addEventListener('click', function(e) {
+//     console.log('add a new todo')
+// })
 
-document.querySelector('#new-todo-text').addEventListener('input', function(e) {
-    console.log(e.target.value)
-})
+// document.querySelector('#new-todo-text').addEventListener('input', function(e) {
+//     console.log(e.target.value)
+// })
+
+
 
 document.querySelector('#search-text').addEventListener('input', function(e) {
     filters.searchText = e.target.value
     renderTodos(todos, filters)
     })
+
+document.querySelector('#todo-form').addEventListener('submit', function(e) {
+    e.preventDefault()
+    console.log(e.target.elements.todo.value)
+    e.target.elements.todo.value = ''
+})
 
 

@@ -3,9 +3,11 @@
 <html>
     <head></head>
     <body>
-        <h1 class="todo">Todos</h1>
-        <input id="new-todo-text" type="text" placeholder="Enter something to do">
-        <button id="create-todo">Create Todo</button>
+        <h1>Todos</h1>
+        <form id="todo-form">
+           <input type="text" placeholder="todo" name="todo">
+           <button>Submit</button>
+        </form>
         <input id="search-text" type="text" placeholder="Filter todos">
         <div id="todos"></div>
         <script src="todo-app.js"></script>

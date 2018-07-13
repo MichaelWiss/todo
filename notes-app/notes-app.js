@@ -65,8 +65,12 @@ document.querySelector('#search-text').addEventListener('input', function(e) {
 // 	e.target.elements.firstName.value = ''
 // })
 
-document.querySelector('#for-fun').addEventListener('change', function(e) {
-	console.log(e.target.checked)
+// document.querySelector('#for-fun').addEventListener('change', function(e) {
+// 	console.log(e.target.checked)
+// })
+
+document.querySelector('#filter-by').addEventListener('change', function (e) {
+	
 })
 
 

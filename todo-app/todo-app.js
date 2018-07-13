@@ -63,8 +63,12 @@ document.querySelector('#search-text').addEventListener('input', function(e) {
 
 document.querySelector('#todo-form').addEventListener('submit', function(e) {
     e.preventDefault()
-    console.log(e.target.elements.todo.value)
-    e.target.elements.todo.value = ''
+    todos.push({
+    todo: e.target.elements.todo.value,
+    completed: false
+    })
+    renderTodos(todos, filters)
+    e.target.elements.text.value = '' 
 })
 
 

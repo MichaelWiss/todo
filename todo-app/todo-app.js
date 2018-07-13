@@ -61,14 +61,14 @@ document.querySelector('#search-text').addEventListener('input', function(e) {
     renderTodos(todos, filters)
     })
 
-document.querySelector('#todo-form').addEventListener('submit', function(e) {
+document.querySelector('#todo-form').addEventListener('submit', function (e) {
     e.preventDefault()
     todos.push({
-    todo: e.target.elements.todo.value,
+    text: e.target.elements.todo.value,
     completed: false
     })
     renderTodos(todos, filters)
-    e.target.elements.text.value = '' 
+    e.target.elements.todo.value = '' 
 })
 
 

@@ -1,4 +1,4 @@
-const notes = [{
+let notes = [{
     title: 'my next trip',
     body: 'I would like to go to China'
 }, {
@@ -23,6 +23,12 @@ const notes = [{
 
 const filters = {
 	searchText: ''
+}
+
+const notesJSON = localStorage.getItem('notes')
+
+if (notesJSON !== null) {
+   notes = JSON.parse(notesJSON)
 }
 
 //localStorage.setItem('location', 'New York')

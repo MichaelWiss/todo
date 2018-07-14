@@ -1,13 +1,4 @@
-let notes = [{
-    title: 'my next trip',
-    body: 'I would like to go to China'
-}, {
-	title: 'habbits to work on',
-	body: 'more reading.'
-}, {
-	title: 'Office',
-	body: 'vacum'
-}]
+let notes = []
 // const el = document.querySelector('p');
 // el.remove();
 
@@ -44,10 +35,10 @@ if (notesJSON !== null) {
 // }
 // const userJSON = JSON.stringify(user)
 // console.log(userJSON)
-// localStorage.setItem('user', userJSON)
-const userJSON = localStorage.getItem('user')
-const user = JSON.parse(userJSON)
-console.log(`${user.name} is ${user.age}`)
+// // localStorage.setItem('user', userJSON)
+// const userJSON = localStorage.getItem('user')
+// const user = JSON.parse(userJSON)
+// // console.log(`${user.name} is ${user.age}`)
 
 
 const renderNotes = function (notes, filters) {
@@ -61,12 +52,12 @@ const renderNotes = function (notes, filters) {
 		const noteEl = document.createElement('p')
 
 		if (note.title.length > 0) {
-
+           noteEl.textContent = note.title
+		} else {
+			noteEl.textContent = 'Unnamed note'
 		}
 
-		noteEl.textContent = note.title
 		document.querySelector('#notes').appendChild(noteEl)
-		}
 	})
 }
 

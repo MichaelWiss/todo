@@ -1,24 +1,17 @@
-const todos = [{
-    text: 'Order cat food',
-    completed: false
-}, {
-    text: 'Clean kitchen',
-    completed: true
-}, {
-    text: 'Buy food',
-    completed: true
-}, {
-    text: 'Do work',
-    completed: false
-}, {
-    text: 'Exercise',
-    completed: true
-}]
+let todos = []
 
 const filters = {
      searchText: '',
      hideCompleted: false
 }
+
+const todosJSON = localStorage.getItem('todos')
+     
+     if (todosJSON !== null) {
+        todos = JSON.parse(todosJSON)
+ }
+
+
 
 const renderTodos = function (todos, filters) {
     const filteredTodos = todos.filter(function (todo) {
@@ -57,6 +50,8 @@ const renderTodos = function (todos, filters) {
 
 renderTodos(todos, filters)
 
+
+
 // You have 2 todos left (p element)
 // Add a p for each todo above (use text value)
 
@@ -75,12 +70,13 @@ document.querySelector('#search-text').addEventListener('input', function(e) {
     renderTodos(todos, filters)
     })
 
-document.querySelector('#todo-form').addEventListener('submit', function (e) {
+document.querySelector('#create-todo').addEventListener('submit', function (e) {
     e.preventDefault()
     todos.push({
        text: e.target.elements.todo.value,
        completed: false
     })
+    localStorage.setItem('todos', JSON.stringify(todos))
     renderTodos(todos, filters)
     e.target.elements.todo.value = '' 
 })

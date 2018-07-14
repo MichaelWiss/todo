@@ -59,15 +59,26 @@ const renderNotes = function (notes, filters) {
 
 	filteredNotes.forEach(function (note) {
 		const noteEl = document.createElement('p')
+
+		if (note.title.length > 0) {
+
+		}
+
 		noteEl.textContent = note.title
 		document.querySelector('#notes').appendChild(noteEl)
+		}
 	})
 }
 
 renderNotes(notes, filters)
 
 document.querySelector('#create-note').addEventListener('click', function(e) {
-	e.target.textContent = 'The button was clicked'
+	notes.push({
+		title: '',
+		body: ''
+	})
+	localStorage.setItem('notes', JSON.stringify(notes))
+	renderNotes(notes, filters)
 })
 
 

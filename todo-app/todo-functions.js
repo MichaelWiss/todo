@@ -1,3 +1,4 @@
+console.log(uuidv4())
 const getSavedTodos = function () {
 	const todosJSON = localStorage.getItem('todos')
      

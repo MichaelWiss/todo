@@ -1,4 +1,5 @@
 console.log(uuidv4())
+// Fetch existing todos from localStorage
 const getSavedTodos = function () {
 	const todosJSON = localStorage.getItem('todos')
      
@@ -9,10 +10,12 @@ const getSavedTodos = function () {
  }
 } 
 
+// Save todos to localStorage
 const savedTodos = function (todos) {
 	localStorage.setItem('todos', JSON.stringify(todos))
 }
 
+// Remove todo by id
 const removeTodo = function (id) {
 	const todoIndex = todos.findIndex(function (todo) {
 		return todo.id === id
@@ -21,6 +24,9 @@ const removeTodo = function (id) {
 		todos.splice(todoIndex, 1)
 	}
 }
+
+
+// Toggle the completed value for a given todo
 
 
 
@@ -64,6 +70,7 @@ const generateTodoDOM = function (todo) {
 
     // setup todo checkbox
     checkbox.setAttribute('type', 'checkbox')
+    checkbox.checked = todo.completed
     todoEl.appendChild(checkbox)
 
     // Setup the todo text

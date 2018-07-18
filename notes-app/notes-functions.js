@@ -1,4 +1,4 @@
-console.log(uuidv4())
+
 
 // Read existing notes from localStorage
 

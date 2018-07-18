@@ -50,7 +50,7 @@ document.querySelector('#create-note').addEventListener('click', function(e) {
 		body: ''
 	})
 	saveNotes(notes)
-	location.assign(`/edit.html{id}`)
+	location.assign(`/edit.html#${id}`)
 })
 
 

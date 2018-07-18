@@ -12,7 +12,8 @@ if (note === undefined) {
 
 titleElement.value = note.title
 bodyElement.value = note.body
-titleElement.addEventListener('input', function{
-       
+titleElement.addEventListener('input', function (e) {
+       note.title = e.target.value
+       saveNotes(notes)
 })
 document.querySelector('remove-note').value = note

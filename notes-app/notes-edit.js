@@ -1,6 +1,6 @@
 const titleElement = document.querySelector('#note-title')
 const bodyElement = document.querySelector('#note-body')
-const buttonElement = document.querySelector('remove-note')
+const removeElement = document.querySelector('#remove-note')
 const noteId = location.hash.substring(1)
 const notes = getSavedNotes()
 const note = notes.find(function (note) {
@@ -21,9 +21,10 @@ bodyElement.addEventListener('input', function (e) {
        note.body = e.target.value
        saveNotes(notes)
 })
-buttonElement.addEventListener('click', function(e) {
-	   titleElement.value = ,
-	   bodyElement.value = 
+removeElement.addEventListener('click', function(e) {
+	   removeNote(note.id)
+	   saveNotes(notes)
+	   location.assign('/index.html')
 })
 
 

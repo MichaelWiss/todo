@@ -2,8 +2,8 @@ const titleElement = document.querySelector('#note-title')
 const bodyElement = document.querySelector('#note-body')
 const removeElement = document.querySelector('#remove-note')
 const noteId = location.hash.substring(1)
-const notes = getSavedNotes()
-const note = notes.find(function (note) {
+let notes = getSavedNotes()
+let note = notes.find(function (note) {
 	return note.id === noteId
 })
 
@@ -28,7 +28,9 @@ removeElement.addEventListener('click', function(e) {
 })
 
 window.addEventListener('click', function(e) {
-	console.log('clicked')
+	if (e.key === 'notes') {
+		notes = JSON.parse(e.newValue)
+	}
 })
 
 

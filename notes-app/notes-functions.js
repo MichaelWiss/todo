@@ -56,9 +56,21 @@ const generateNoteDOM = function (note) {
     return noteEl
 }
 
+// sort your notes by one of three ways
+
+const sortNotes = function (notes, sortBy) {
+	if(sortBy === 'byEdited') {
+		return notes.sort(fnction () {
+			
+		})
+	}
+
+}
+
 // Render application notes
 
 const renderNotes = function (notes, filters) {
+	notes = sortNotes(notes, filters.sortBy)
 	const filteredNotes = notes.filter(function (note) {
 		return note.title.toLowerCase().includes(filters.searchText.toLowerCase())
 	})
@@ -70,3 +82,8 @@ const renderNotes = function (notes, filters) {
 		document.querySelector('#notes').appendChild(noteEl)
 	})
 }
+
+const generateLastEdited = function (timestamp) {
+	return `Last edited ${moment(timestamp).fromNow()}`
+
+} 

@@ -90,7 +90,7 @@ document.querySelector('#filter-by').addEventListener('change', function (e) {
 window.addEventListener('storage', function (e) {
 	if (e.key === 'notes') {
 		notes = JSON.parse(e.newValue)
-		renderNotes(notes, fiters)
+		renderNotes(notes, filters)
 	}
 })
 

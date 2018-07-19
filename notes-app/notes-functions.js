@@ -60,9 +60,17 @@ const generateNoteDOM = function (note) {
 
 const sortNotes = function (notes, sortBy) {
 	if(sortBy === 'byEdited') {
-		return notes.sort(fnction () {
-			
+		return notes.sort(function (a, b) {
+              if (a.updatedAt > b.updatedAt) {
+              	return -1
+          } else if (a.updatedAt < b.updatedAt) {
+          	return 1
+          } else {
+          	return 0
+          }
 		})
+	} else {
+		return notes
 	}
 
 }

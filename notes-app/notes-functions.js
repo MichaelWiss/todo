@@ -79,7 +79,11 @@ const sortNotes = function (notes, sortBy) {
         		return 0
         	}
         })
-	} else {
+	} else if (sortBy === 'alphabetical') {
+		return notes.sort(function (a, b) {
+			
+		})
+	} {
 		return notes
 	}
 

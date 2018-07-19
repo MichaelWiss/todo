@@ -27,4 +27,8 @@ removeElement.addEventListener('click', function(e) {
 	   location.assign('/index.html')
 })
 
+window.addEventListener('click', function(e) {
+	console.log('clicked')
+})
+
 

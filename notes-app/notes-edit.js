@@ -13,6 +13,7 @@ if (note === undefined) {
 
 titleElement.value = note.title
 bodyElement.value = note.body
+
 titleElement.addEventListener('input', function (e) {
        note.title = e.target.value
        saveNotes(notes)
@@ -27,9 +28,19 @@ removeElement.addEventListener('click', function(e) {
 	   location.assign('/index.html')
 })
 
-window.addEventListener('click', function(e) {
+window.addEventListener('storage', function(e) {
 	if (e.key === 'notes') {
 		notes = JSON.parse(e.newValue)
+		let note = notes.find(function (note) {
+	        return note.id === noteId
+        })
+
+        if (note === undefined) {
+	        location.assign('/index.html')
+        }
+
+        titleElement.value = note.title
+        bodyElement.value = note.body
 	}
 })
 

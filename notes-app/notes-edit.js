@@ -14,6 +14,7 @@ if (note === undefined) {
 
 titleElement.value = note.title
 bodyElement.value = note.body
+dateElement.textContent = `Last edited ${moment(note.updatedAt).fromNow()}`
 
 titleElement.addEventListener('input', function (e) {
        note.title = e.target.value

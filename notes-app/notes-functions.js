@@ -101,13 +101,13 @@ const renderNotes = (notes, filters) => {
 
     document.querySelector('#notes').innerHTML = ''
 
-	filteredNotes.forEach(function (note) {
+	filteredNotes.forEach((note) => {
 		const noteEl = generateNoteDOM(note)
 		document.querySelector('#notes').appendChild(noteEl)
 	})
 }
 
-const generateLastEdited = function (timestamp) {
+const generateLastEdited =(timestamp) => {
 	return `Last edited ${moment(timestamp).fromNow()}`
 
 } 

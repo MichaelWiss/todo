@@ -2,7 +2,7 @@ console.log(uuidv4())
 
 
 // Fetch existing todos from localStorage
-const getSavedTodos = function () {
+const getSavedTodos = () => {
 	const todosJSON = localStorage.getItem('todos')
      
      if (todosJSON !== null) {
@@ -13,15 +13,13 @@ const getSavedTodos = function () {
 } 
 
 // Save todos to localStorage
-const savedTodos = function (todos) {
+const savedTodos = (todos) => {
 	localStorage.setItem('todos', JSON.stringify(todos))
 }
 
 // Remove todo by id
-const removeTodo = function (id) {
-	const todoIndex = todos.findIndex(function (todo) {
-		return todo.id === id
-	})
+const removeTodo = (id) => {
+	const todoIndex = todos.findIndex((todo) => todo.id === id)
 	if (todoIndex > -1) {
 		todos.splice(todoIndex, 1)
 	}
@@ -29,10 +27,8 @@ const removeTodo = function (id) {
 
 
 // Toggle the completed value for a given todo
-const toggleTodo = function (id) {
-	const todo = todos.find(function (todo) {
-		return todo.id === id
-	})
+const toggleTodo = (id) => {
+	const todo = todos.find((todo) todo.id === id)
 	if (todo !== undefined) {
 		todo.completed = !todo.completed
 	}

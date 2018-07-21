@@ -4,7 +4,8 @@ console.log(uuidv4())
 // Fetch existing todos from localStorage
 const getSavedTodos = () => {
 	const todosJSON = localStorage.getItem('todos')
-     
+     return todosJSON !== null ? JSONparse(todosJSON) : []
+
      if (todosJSON !== null) {
         return JSON.parse(todosJSON)
  } else {
@@ -28,7 +29,7 @@ const removeTodo = (id) => {
 
 // Toggle the completed value for a given todo
 const toggleTodo = (id) => {
-	const todo = todos.find((todo) todo.id === id)
+	const todo = todos.find((todo) => todo.id === id)
 	if (todo !== undefined) {
 		todo.completed = !todo.completed
 	}
@@ -99,7 +100,7 @@ const generateTodoDOM = (todo) => {
 	return todoEl
 }
 
-const generateSummaryDOM = function (incompleteTodos) {
+const generateSummaryDOM =(incompleteTodos) => {
       const summary = document.createElement('h2')
       summary.textContent = `You have ${incompleteTodos.length} todos left`
       return summary

@@ -1,3 +1,7 @@
+'use strict'
+
+
+
 let notes = getSavedNotes()
 // const el = document.querySelector('p');
 // el.remove();

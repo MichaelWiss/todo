@@ -7,20 +7,20 @@ const Hangman = function (word, remainingGuesses) {
 Hangman.prototype.getPuzzle = function () {
 	let puzzle = ''
     
-    this.word.forEach(letter) {
+    this.word.forEach((letter) => {
     	if (this.guessedLetters.includes(letter) || letter === ' ') {
           puzzle += letter
     	} else{
            puzzle += '*'
     	}
-    }
+    })
 
 	return puzzle
 }
 
 
 
-const game1 = new Hangman('cat' 2)
+const game1 = new Hangman('Cat', 2)
 console.log(game1)
 
 const game2 = new Hangman('New Jersey', 4)

@@ -1,7 +1,14 @@
 const Hangman = function (word, remainingGuesses) {
 	this.word = word.toLowerCase().split('')
 	this.remainingGuesses = remainingGuesses
-	this.guessedLetters = ['c']
+	this.guessedLetters = []
+	this.status = 'playing'
+}
+
+Hangman.prototype.calculateStatus = function () {
+    if () {
+    	this.status = 'failed'
+    }
 }
 
 Hangman.prototype.getPuzzle = function () {
@@ -30,5 +37,7 @@ Hangman.prototype.makeGuess = function (guess) {
 		this.remainingGuesses--
 
 	}
+
+	this.calculateStatus
 }
 

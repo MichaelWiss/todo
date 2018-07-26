@@ -26,7 +26,8 @@ Hangman.prototype.makeGuess = function (guess) {
 		this.guessedLetters.push(guess)
 	}
 
-	if (isUnique && ) {
+	if (isUnique && isBadGuess) {
+		this.remainingGuesses--
 
 	}
 }
@@ -34,7 +35,12 @@ Hangman.prototype.makeGuess = function (guess) {
 
 
 const game1 = new Hangman('Cat', 2)
-console.log(game1)
+game1.makeGuess('c')
+game1.makeGuess('t')
+game1.makeGuess('a')
+console.log(game1.getPuzzle())
+console.log(game1.remainingGuesses)
 
 const game2 = new Hangman('New Jersey', 4)
-console.log(game2)
+game2.makeGuess('w')
+console.log(game2.getPuzzle())

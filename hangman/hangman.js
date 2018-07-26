@@ -20,9 +20,14 @@ Hangman.prototype.getPuzzle = function () {
 
 Hangman.prototype.makeGuess = function (guess) {
 	guess = guess.toLowerCase()
-
-	if (this.guessedLetters.includes(guess)) {
+    const isUnique = !this.guessedLetters.includes(guess)
+    const isBadGuess = !this.word.includes(guess)
+	if (isUnique) {
 		this.guessedLetters.push(guess)
+	}
+
+	if (isUnique && ) {
+
 	}
 }
 

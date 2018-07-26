@@ -41,5 +41,7 @@ console.log(game1.remainingGuesses)
 
 window.addEventListener('keypress', function (e) {
 	const guess = String.fromCharCode(e.charCode)
-	console.log(guess)
+	game1.makeGuess(guess)
+	console.log(game1.getPuzzle())
+    console.log(game1.remainingGuesses)
 })

@@ -18,6 +18,14 @@ Hangman.prototype.getPuzzle = function () {
 	return puzzle
 }
 
+Hangman.prototype.makeGuess = function (guess) {
+	guess = guess.toLowerCase()
+
+	if (this.guessedLetters.includes(guess)) {
+		this.guessedLetters.push(guess)
+	}
+}
+
 
 
 const game1 = new Hangman('Cat', 2)

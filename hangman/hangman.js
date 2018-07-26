@@ -32,7 +32,8 @@ Hangman.prototype.makeGuess = function (guess) {
 	}
 }
 
-
+const puzzleEl = document.querySelector('#puzzle')
+const guessesEl = document.querySelector('#guesses')
 
 const game1 = new Hangman('Cat', 2)
 

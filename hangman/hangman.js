@@ -52,6 +52,6 @@ Hangman.prototype.makeGuess = function (guess) {
 
 	}
 
-	this.calculateStatus
+	this.calculateStatus()
 }
 

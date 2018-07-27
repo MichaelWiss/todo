@@ -38,8 +38,10 @@ Hangman.prototype.calculateStatus = function () {
 Hangman.prototype.getStatusMessage = function () {
 	if (this.status === 'playing') {
 		return `Guesses left: ${this.remainingGuesses}`
-	} else if (this.states === 'failed') {
-		return 'Nice try! the word was "",' 
+	} else if (this.status === 'failed') {
+		return `Nice try! The word was "${this.word.join('')}".` 
+	} else {
+		return  `Great work! You guessed the word!`
 	}
 }
 

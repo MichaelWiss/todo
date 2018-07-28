@@ -7,7 +7,7 @@ puzzleEl.textContent = game1.puzzle
 guessesEl.textContent = game1.statusMessage
 
 
-window.addEventListener('keypress', function (e) {
+window.addEventListener('keypress', (e) => {
 	const guess = String.fromCharCode(e.charCode)
 	game1.makeGuess(guess)
 	puzzleEl.textContent = game1.puzzle
@@ -18,6 +18,7 @@ const request = new XMLHttpRequest()
 
 request.addEventListener('readystatechange', (e) => {
 	if (e.target.readyState ===4) {
+		console.log(e.target.status)
 		const data = JSON.parse(e.target.responseText)
 		console.log(data)
 	}

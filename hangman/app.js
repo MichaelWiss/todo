@@ -22,6 +22,14 @@ getPuzzle((error, puzzle) => {
 	}
 })
 
+getCountry('US', (error, country) => {
+	if (error) {
+
+	} else {
+		
+	}
+})
+
 
 
 

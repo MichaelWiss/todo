@@ -22,6 +22,11 @@ getPuzzle((error, puzzle) => {
 	}
 })
 
+console.log('Do something else')
+
+const puzzle = getPuzzleSync()
+console.log(puzzle)
+
 
 // const request = new XMLHttpRequest() 
 

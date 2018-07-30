@@ -6,7 +6,7 @@ const getPuzzle = (wordCount) => new Promise((resolve, reject) => {
 		const data = JSON.parse(e.target.responseText)
 		resolve(data.puzzle)
 	} else if (e.target.readyState === 4) {
-		callback('An error has taken place', undefined)
+		reject('An error has taken place')
 	}
 })
 

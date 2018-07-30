@@ -24,9 +24,9 @@ getPuzzle((error, puzzle) => {
 
 getCountry('US', (error, country) => {
 	if (error) {
-
+       console.log(error)
 	} else {
-		
+		console.log(`Country name: ${country.name}`)
 	}
 })
 

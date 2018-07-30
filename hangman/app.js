@@ -20,12 +20,10 @@ getPuzzle('2',).then((puzzle) => {
    console.log(`Error: ${err}`)
 })
 
-getCountry('US', (error, country) => {
-	if (error) {
-       console.log(error)
-	} else {
-		console.log(`Country name: ${country.name}`)
-	}
+getCountry('US').then((country) => {
+       console.log(`Country name: ${country.name}`)
+	}, (err) => {
+	console.log(`Error: ${err}`)
 })
 
 

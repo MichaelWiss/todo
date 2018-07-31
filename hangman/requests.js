@@ -12,7 +12,21 @@ const getPuzzle = (wordCount) => {
 
 
 
-const getCountry = (countryCode) => new Promise((resolve, reject) => {
+const getCountry = (countryCode) => {
+	return fetch('http://restcountries.eu/rest/v2/all').then((response) => {
+		if (response.status === 200) {
+           return response.json()
+		} else {
+			throw new Error('Unable to fetch data ')
+		}
+	}).then((data) => {
+           return country = data.find((country) => country.alpha2Code === countryCode)
+	})
+}
+
+//
+
+const getCountryOld = (countryCode) => new Promise((resolve, reject) => {
 	const requestCountry = new XMLHttpRequest()
 
     requestCountry.addEventListener('readystatechange', (e) => {

@@ -14,11 +14,11 @@ window.addEventListener('keypress', (e) => {
     guessesEl.textContent = game1.statusMessage
 })
 
-// getPuzzle('2',).then((puzzle) => {
-//     console.log(puzzle)
-// }, (err) => {
-//    console.log(`Error: ${err}`)
-// })
+getPuzzle('2',).then((data) => {
+    console.log(data.puzzle)
+}).catch((err) => {
+  console.log(`Error: ${err}`)
+})
 
 // getCountry('US').then((country) => {
 //        console.log(`Country name: ${country.name}`)
@@ -26,17 +26,17 @@ window.addEventListener('keypress', (e) => {
 // 	console.log(`Error: ${err}`)
 // })
 
-fetch('http://puzzle.mead.io/puzzle', {}).then((response) => {
-   if (response.status === 200) {
-       return response.json()
-   } else {
-   	  throw new Error('Unable to fetch the puzzle')
-   }
-}).then((data) => {
-    console.log(data.puzzle)
-}).catch((error) => {
-    console.log(error)
-})
+// fetch('http://puzzle.mead.io/puzzle', {}).then((response) => {
+//    if (response.status === 200) {
+//        return response.json()
+//    } else {
+//    	  throw new Error('Unable to fetch the puzzle')
+//    }
+// }).then((data) => {
+//     console.log(data.puzzle)
+// }).catch((error) => {
+//     console.log(error)
+// })
 
 
 

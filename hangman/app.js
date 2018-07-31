@@ -26,7 +26,15 @@ getCountry('US').then((country) => {
 	console.log(`Error: ${err}`)
 })
 
-fetch('http:/puzzle.mead.io/puzzle')
+fetch('http:/puzzle.mead.io/puzzle', {}).then((response) => {
+   if (response.status === 200) {
+
+   } else {
+   	  throw new Error('Unable to fetch the puzzle')
+   }
+}).catch((error) => {
+    console.log(error)
+})
 
 
 

@@ -26,6 +26,8 @@ getCountry('US').then((country) => {
 	console.log(`Error: ${err}`)
 })
 
+fetch('http:/puzzle.mead.io/puzzle')
+
 
 
 

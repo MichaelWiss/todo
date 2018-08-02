@@ -11,14 +11,15 @@ const getPuzzle = async (wordCount) => {
 
 
 
-const getCountry = (countryCode) => {
-	return fetch('http://restcountries.eu/rest/v2/all').then((response) => {
+const getCountry = async (countryCode) => {
+	const countryResponse = await fetch('http://restcountries.eu/rest/v2/all').then((response) => {
 		if (response.status === 200) {
-           return response.json()
+			const countryData = await response.json()
+           return countryData.json()
 		} else {
 			throw new Error('Unable to fetch data ')
 		}
-	}).then((data) => {
+	}).then((countryData) => {
 		return country = data.find((country) => country.alpha2Code === countryCode)
   })
 }

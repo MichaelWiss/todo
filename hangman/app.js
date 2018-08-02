@@ -20,19 +20,25 @@ getPuzzle('2',).then((puzzle) => {
   console.log(`Error: ${err}`)
 })
 
+// getCurrentCountry().then((country) => {
+// 	console.log(country.name)
+// }).catch((error) => {
+// 	console.log(error)
+// })
+
 // getCountry('MX').then((country) => {
 //        console.log(`Country name: ${country.name}`)
 // 	}).catch((err) => {
 //      console.log(`Error: ${err}`)
 // })
 
-getLocation().then((location) => {
-	return getCountry(location.country)
-}).then((country) => {
-   console.log(country.name)
-}).catch((err) => {
-	console.log(`Error: ${err}`)
-})	
+// getLocation().then((location) => {
+// 	return getCountry(location.country)
+// }).then((country) => {
+//    console.log(country.name)
+// }).catch((err) => {
+// 	console.log(`Error: ${err}`)
+// })	
 
 // fetch('http://puzzle.mead.io/puzzle', {}).then((response) => {
 //    if (response.status === 200) {

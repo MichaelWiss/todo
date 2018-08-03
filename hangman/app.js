@@ -14,6 +14,10 @@ window.addEventListener('keypress', (e) => {
     guessesEl.textContent = game1.statusMessage
 })
 
+const startGame = async () => {
+	
+}
+
 getPuzzle('2',).then((puzzle) => {
     console.log(puzzle)
 }).catch((err) => {

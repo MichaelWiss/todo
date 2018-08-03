@@ -7,12 +7,11 @@ let game1
 // guessesEl.textContent = game1.statusMessage
 
 
-// window.addEventListener('keypress', (e) => {
-// 	const guess = String.fromCharCode(e.charCode)
-// 	game1.makeGuess(guess)
-// 	puzzleEl.textContent = game1.puzzle
-//     guessesEl.textContent = game1.statusMessage
-// })
+window.addEventListener('keypress', (e) => {
+	const guess = String.fromCharCode(e.charCode)
+	game1.makeGuess(guess)
+	render()
+})
 
 const render = () => {
 	puzzleEl.textContent = game1.puzzle

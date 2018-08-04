@@ -40,7 +40,7 @@ removeElement.addEventListener('click', (e) => {
 window.addEventListener('storage', (e) => {
 	if (e.key === 'notes') {
 		notes = JSON.parse(e.newValue)
-		let note = notes.find(function (note) => note.id === noteId)
+		note = notes.find((note) => note.id === noteId)
 
         if (!note) {
 	        location.assign('/index.html')

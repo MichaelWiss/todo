@@ -1,7 +1,7 @@
 'use strict'
 
 
-console.log(uuidv4())
+// console.log(uuidv4())
 
 
 // Fetch existing todos from localStorage

@@ -38,15 +38,19 @@ document.querySelector('#search-text').addEventListener('input', (e) => {
     })
 
 document.querySelector('#create-todo').addEventListener('submit', (e) => {
+    const text = e.target.elements.text.value.trim()
     e.preventDefault()
-    todos.push({
+
+    if (text.lemgth > 0) {
+       todos.push({
        id: uuidv4(), 
-       text: e.target.elements.todo.value,
+       text: text,
        completed: false
     })
     savedTodos(todos)
     renderTodos(todos, filters)
     e.target.elements.todo.value = '' 
+    }
 })
 
 document.querySelector('#hide-completed').addEventListener('change', (e) => {

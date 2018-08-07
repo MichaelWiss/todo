@@ -41,10 +41,10 @@ document.querySelector('#create-todo').addEventListener('submit', (e) => {
     const text = e.target.elements.text.value.trim()
     e.preventDefault()
 
-    if (text.lemgth > 0) {
+    if (text.length > 0) {
        todos.push({
        id: uuidv4(), 
-       text: text,
+       text,
        completed: false
     })
     savedTodos(todos)

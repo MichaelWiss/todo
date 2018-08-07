@@ -22,7 +22,7 @@ const getSavedTodos = () => {
 // } 
 
 // Save todos to localStorage
-const savedTodos = (todos) => {
+const saveTodos = (todos) => {
 	localStorage.setItem('todos', JSON.stringify(todos))
 }
 

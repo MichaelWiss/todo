@@ -8,7 +8,7 @@ const filters = {
      hideCompleted: false
 }
 
-getSavedTodos()
+
 
 
 
@@ -41,16 +41,16 @@ document.querySelector('#create-todo').addEventListener('submit', (e) => {
     const text = e.target.elements.text.value.trim()
     e.preventDefault()
 
-    if (text.length > 0) {
+  if (text.length > 0) {
        todos.push({
        id: uuidv4(), 
        text,
        completed: false
     })
-    savedTodos(todos)
+    saveTodos(todos)
     renderTodos(todos, filters)
-    e.target.elements.todo.value = '' 
-    }
+    e.target.elements.text.value = '' 
+  }
 })
 
 document.querySelector('#hide-completed').addEventListener('change', (e) => {
